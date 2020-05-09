@@ -5,7 +5,7 @@
  * Date:     2020/3/25 13:27
  * Description: 约瑟fu
  */
-package Line_Demo;
+package othercode;
 
 public class yuesefu {
     private static class Node<T> {

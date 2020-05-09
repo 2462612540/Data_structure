@@ -38,6 +38,10 @@ public class Sequeue<T> implements Iterable {
      */
     //清空链表
     public void clear() {
+        //将数组指向空指正这个时候长度就为了0
+        // clear to let GC do its work
+        for (int i = 0; i < N - 1; i++)
+            eles[i] = null;
         this.N = 0;
     }
 
@@ -76,7 +80,6 @@ public class Sequeue<T> implements Iterable {
         }
         eles[i] = t;
         N++;
-
     }
 
     public void resize(int newsize) {
@@ -92,16 +95,18 @@ public class Sequeue<T> implements Iterable {
 
     //移除某一个元素
     public T remove(int i) {
-        //向前移动
+        //先获取这个元素
+        T object = eles[i];
+        //将元素向前移动
         for (int index = i; i < N - 1; i++) {
-            eles[index - 1] = eles[index];
+            eles[index] = eles[index + 1];
         }
         N--;
         //判断是否需要缩容量
         if (N < eles.length / 4) {
             resize(eles.length / 2);
         }
-        return eles[i];
+        return object;
     }
 
     //首次出现元素的位置
@@ -111,7 +116,7 @@ public class Sequeue<T> implements Iterable {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     public Iterator iterator() {

@@ -1,16 +1,15 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Link_list
+ * FileName: LinklistTest
  * Author:   xjl
  * Date:     2020/3/18 15:04
  * Description: 链表
  */
-package List_Demo;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Link_list {
+public class LinklistTest {
     /**
      * 这是一个链表的
      * 存储是有元素和指针来指导的。
