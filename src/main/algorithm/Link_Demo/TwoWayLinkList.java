@@ -17,31 +17,6 @@ public class TwoWayLinkList<T> implements Iterable {
     //链表的长度
     private int N;
 
-    public Iterator iterator() {
-        return new TIteraotr();
-    }
-
-    private class TIteraotr implements Iterator {
-        private Node n;
-
-        public TIteraotr() {
-            this.n = head;
-        }
-
-        public boolean hasNext() {
-            return n.next != null;
-        }
-
-        public Object next() {
-            n = n.next;
-            return n.item;
-        }
-
-        public void remove() {
-
-        }
-    }
-
     //成员类
     private class Node<T> {
         //元素
@@ -135,8 +110,10 @@ public class TwoWayLinkList<T> implements Iterable {
         for (int index = 0; index <= i - 1; index++) {
             pre = pre.next;
         }
+
         //找到i的节点
         Node curr = pre.next;
+
         //找到下一个节点
         Node nextnode = curr.next;
         //i的前一个节点指向i的后一个节点
@@ -161,7 +138,7 @@ public class TwoWayLinkList<T> implements Iterable {
         Node n = head;
         for (int i = 0; n.next != null; i++) {
             n = n.next;
-            if (n.item == t) {
+            if (n.item.equals(t)) {
                 return i;
             }
         }
@@ -183,5 +160,31 @@ public class TwoWayLinkList<T> implements Iterable {
             return null;
         }
         return (T) last.item;
+    }
+
+    //构造一个迭代器
+    public Iterator iterator() {
+        return new TIteraotr();
+    }
+
+    private class TIteraotr implements Iterator {
+        private Node n;
+
+        public TIteraotr() {
+            this.n = head;
+        }
+
+        public boolean hasNext() {
+            return n.next != null;
+        }
+
+        public Object next() {
+            n = n.next;
+            return n.item;
+        }
+
+        public void remove() {
+
+        }
     }
 }
