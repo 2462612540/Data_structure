@@ -5,7 +5,7 @@
  * Date:     2020/3/18 16:21
  * Description: 翻转链表
  */
-package Link_Demo;
+package Link;
 
 import org.junit.Test;
 

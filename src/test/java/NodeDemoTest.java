@@ -1,4 +1,4 @@
-import Link_Demo.NodeDemo;
+import Link.NodeDemo;
 
 /**
  * Copyright (C), 2018-2020

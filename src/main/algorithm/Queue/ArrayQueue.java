@@ -5,7 +5,7 @@
  * Date:     2020/3/19 11:00
  * Description: 队列
  */
-package Queue_Demo;
+package Queue;
 
 /**
  * 顺序队列
@@ -15,7 +15,6 @@ package Queue_Demo;
  *
  */
 public class ArrayQueue {
-
 
     //定义队列的一些结构
     //使用数组来存储我们队列的元素

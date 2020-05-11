@@ -7,21 +7,21 @@
  */
 package Graph;
 
-import Queue_Demo.Queue;
+import Queue.QueueLink;
 
 public class Graph {
     private final int V;//记录定点的数量
     private int E;//获取图中的边的数量
-    private Queue<Integer>[] adj;//领接表
+    private QueueLink<Integer>[] adj;//领接表
 
     public Graph(int v) {
         //初始化成员变量
         this.V = v;
         this.E = 0;
-        this.adj = new Queue[V];
+        this.adj = new QueueLink[V];
 
         for (int i = 0; i < adj.length; i++) {
-            adj[i] = new Queue<Integer>();
+            adj[i] = new QueueLink<Integer>();
         }
     }
 
@@ -42,7 +42,7 @@ public class Graph {
     }
 
     //获取和顶点相关的所有的点
-    public Queue<Integer> adj(int v) {
+    public QueueLink<Integer> adj(int v) {
         return adj[v];
     }
 }

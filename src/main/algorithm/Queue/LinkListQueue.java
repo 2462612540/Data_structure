@@ -5,7 +5,7 @@
  * Date:     2020/3/19 13:52
  * Description: 队列元素
  */
-package Queue_Demo;
+package Queue;
 
 /**
  * 定义一个节点的完毕

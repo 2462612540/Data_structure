@@ -7,7 +7,7 @@
  */
 package Tree;
 
-import Queue_Demo.Queue;
+import Queue.QueueLink;
 
 public class BinaryTree<Key extends Comparable<Key>, Value> {
     //成员变量
@@ -202,14 +202,14 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
     //二叉树的遍历的方式
     //前序遍历
     //获取整个树的键
-    public Queue<Key> preErgodic() {
-        Queue<Key> keys = new Queue<>();
+    public QueueLink<Key> preErgodic() {
+        QueueLink<Key> keys = new QueueLink<>();
         preErgodic(root, keys);
         return keys;
     }
 
     //获取指定的数x的所有的键，并放置在keys中
-    private void preErgodic(Node x, Queue<Key> keys) {
+    private void preErgodic(Node x, QueueLink<Key> keys) {
         //如果树为空的话
         if (x == null) {
             return;
@@ -228,14 +228,14 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
 
     //中序遍历
     //获取整个树的键
-    public Queue<Key> midErgodic() {
-        Queue<Key> keys = new Queue<>();
+    public QueueLink<Key> midErgodic() {
+        QueueLink<Key> keys = new QueueLink<>();
         midErgodic(root, keys);
         return keys;
     }
 
     //获取指定的数x的所有的键，并放置在keys中
-    private void midErgodic(Node x, Queue<Key> keys) {
+    private void midErgodic(Node x, QueueLink<Key> keys) {
         //如果树为空的话
         if (x == null) {
             return;
@@ -254,13 +254,13 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
 
     //后序遍历
     //获取整个树的键
-    public Queue<Key> afterErgodic() {
-        Queue<Key> keys = new Queue<>();
+    public QueueLink<Key> afterErgodic() {
+        QueueLink<Key> keys = new QueueLink<>();
         afterErgodic(root, keys);
         return keys;
     }
 
-    private void afterErgodic(Node x, Queue<Key> keys) {
+    private void afterErgodic(Node x, QueueLink<Key> keys) {
         //如果树为空的话
         if (x == null) {
             return;
@@ -278,10 +278,10 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
     }
 
     //层序遍历的方法
-    public Queue<Key> layerErgodic() {
+    public QueueLink<Key> layerErgodic() {
         //定义两个队列
-        Queue<Key> keys = new Queue<>();
-        Queue<Node> nodes = new Queue<>();
+        QueueLink<Key> keys = new QueueLink<>();
+        QueueLink<Node> nodes = new QueueLink<>();
         nodes.push(root);
         while (!nodes.isEmpty()) {
             //从队列中的弹出节点 把节点中的key放置keys中

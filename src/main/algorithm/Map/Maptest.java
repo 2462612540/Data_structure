@@ -5,7 +5,7 @@
  * Date:     2020/3/25 16:56
  * Description: map测试
  */
-package Map_Demo;
+package Map;
 
 public class Maptest {
 

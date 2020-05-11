@@ -5,7 +5,7 @@
  * Date:     2020/3/25 16:23
  * Description: map的实现
  */
-package Map_Demo;
+package Map;
 
 public class Map_My<Key, Value> {
     //记录首节点

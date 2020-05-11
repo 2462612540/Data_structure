@@ -5,7 +5,7 @@
  * Date:     2020/3/18 14:33
  * Description: 数组的列表
  */
-package Array_Demo;
+package Array;
 
 /**
  * 数组的特点有;

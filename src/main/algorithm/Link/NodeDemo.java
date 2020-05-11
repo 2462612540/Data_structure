@@ -5,7 +5,7 @@
  * Date:     2020/5/7 10:02
  * Description: 节点类的构造
  */
-package Link_Demo;
+package Link;
 
 /**
  * 构造方法的

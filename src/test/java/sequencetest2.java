@@ -1,4 +1,4 @@
-import Line_Demo.Sequeue;
+import Line.Sequeue;
 import org.junit.Test;
 
 /**

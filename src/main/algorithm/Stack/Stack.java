@@ -1,42 +1,22 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Stack_My
+ * FileName: Stack
  * Author:   xjl
  * Date:     2020/3/25 14:47
  * Description: 实现栈顶结构
  */
-package Stack_Demo;
+package Stack;
 
 import java.util.Iterator;
 
-public class Stack_My<T> implements Iterable {
+/**
+ * 基于链表的实现
+ *
+ * @param <T>
+ */
+public class Stack<T> implements Iterable {
     private Node head;//表示的节点
     private int N;//表示的是元素的个数
-
-    public Iterator iterator() {
-        return new SIterator();
-    }
-
-    private class SIterator implements Iterator {
-        private Node n;
-
-        public SIterator() {
-            this.n = head;
-        }
-
-        public boolean hasNext() {
-            return n.next != null;
-        }
-
-        public Object next() {
-            n = n.next;
-            return n.item;
-        }
-
-        public void remove() {
-
-        }
-    }
 
     private class Node {
         private T item;
@@ -48,7 +28,7 @@ public class Stack_My<T> implements Iterable {
         }
     }
 
-    public Stack_My() {
+    public Stack() {
         this.head = new Node(null, null);
         N = 0;
     }
@@ -89,5 +69,30 @@ public class Stack_My<T> implements Iterable {
         //元素个数-1
         N--;
         return (T) oldfrist.item;
+    }
+
+    public Iterator iterator() {
+        return new SIterator();
+    }
+
+    private class SIterator implements Iterator {
+        private Node n;
+
+        public SIterator() {
+            this.n = head;
+        }
+
+        public boolean hasNext() {
+            return n.next != null;
+        }
+
+        public Object next() {
+            n = n.next;
+            return n.item;
+        }
+
+        public void remove() {
+
+        }
     }
 }

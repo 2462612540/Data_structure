@@ -1,16 +1,15 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: ArrayList_Demo
+ * FileName: ArrayList_Test
  * Author:   xjl
  * Date:     2020/3/18 14:44
  * Description: 数组的原理
  */
-package Line_Demo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayList_Demo {
+public class ArrayList_Test {
     public static void main(String[] args) {
         //采用的arraylist来实现动态数组来实现 这个是通用性数据结构
         // 考虑了多种安全性的问题和数据的在多线城下的数据安全的问题

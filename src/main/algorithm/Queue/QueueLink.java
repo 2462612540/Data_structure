@@ -1,50 +1,21 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Queue
+ * FileName: QueueLink
  * Author:   xjl
  * Date:     2020/3/25 15:55
  * Description: 队列实现
  */
-package Queue_Demo;
+package Queue;
 
 import java.util.Iterator;
 
-public class Queue<T> implements Iterable {
+public class QueueLink<T> implements Iterable {
     //记录首节点
     private Node head;
     //记录最后一个节点
     private Node last;
     //记录队列中元素的个数
     private int N;
-
-    @Override
-    public Iterator iterator() {
-        return new QIterator();
-    }
-
-    private class QIterator implements Iterator {
-        private Node n;
-
-        public QIterator() {
-            this.n = head;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return n.next != null;
-        }
-
-        @Override
-        public Object next() {
-            n = n.next;
-            return n.item;
-        }
-
-        @Override
-        public void remove() {
-
-        }
-    }
 
     private class Node {
         public T item;
@@ -57,7 +28,7 @@ public class Queue<T> implements Iterable {
     }
 
     //构造函数
-    public Queue() {
+    public QueueLink() {
         this.head = new Node(null, null);
         this.last = null;
         this.N = 0;
@@ -98,5 +69,34 @@ public class Queue<T> implements Iterable {
             last = null;
         }
         return oldfrist.item;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new QIterator();
+    }
+
+    private class QIterator implements Iterator {
+        private Node n;
+
+        public QIterator() {
+            this.n = head;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return n.next != null;
+        }
+
+        @Override
+        public Object next() {
+            n = n.next;
+            return n.item;
+        }
+
+        @Override
+        public void remove() {
+
+        }
     }
 }

@@ -5,7 +5,7 @@
  * Date:     2020/3/19 15:28
  * Description: c插入排序
  */
-package ArraySort;
+package Sort;
 
 import org.junit.Test;
 

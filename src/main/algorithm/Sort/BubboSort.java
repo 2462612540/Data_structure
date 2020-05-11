@@ -5,7 +5,7 @@
  * Date:     2020/3/19 14:50
  * Description: 冒泡排序原理
  */
-package ArraySort;
+package Sort;
 
 public class BubboSort {
     public static int[] BubboSort(int[] number) {

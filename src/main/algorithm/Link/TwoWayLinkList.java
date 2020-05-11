@@ -5,7 +5,7 @@
  * Date:     2020/3/25 11:49
  * Description: 双向链表
  */
-package Link_Demo;
+package Link;
 
 import java.util.Iterator;
 

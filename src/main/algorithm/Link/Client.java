@@ -5,7 +5,7 @@
  * Date:     2020/5/10 10:42
  * Description: 链表成环
  */
-package Link_Demo;
+package Link;
 
 import org.junit.Test;
 

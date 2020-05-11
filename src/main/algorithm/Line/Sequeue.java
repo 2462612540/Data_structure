@@ -5,7 +5,7 @@
  * Date:     2020/3/25 8:25
  * Description: 线性表
  */
-package Line_Demo;
+package Line;
 
 import java.util.Iterator;
 
