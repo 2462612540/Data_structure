@@ -54,6 +54,10 @@ public class QueueArray {
     }
 
     public int pop() {
+        //判断是否需要缩小容器
+        if (N < array.length / 2) {
+            resize(array.length / 2);
+        }
         //将剩下的元素向前移动一位
         int res = array[N - 1];
         array[N - 1] = 0;

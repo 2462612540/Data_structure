@@ -1,20 +1,20 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: heapDemo
+ * FileName: HEAP
  * Author:   xjl
  * Date:     2020/4/1 13:11
  * Description: 堆的API设计
  */
 package Heap;
 
-public class heapDemo<T extends Comparable<T>> {
+public class HEAP<T extends Comparable<T>> {
     //用于存放数字的
     private T[] items;
     //用于存放柜堆中的个数的元素
     private int N;
 
     //构造函数
-    public heapDemo(int capacity) {
+    public HEAP(int capacity) {
         this.items = (T[]) new Object[capacity];
         this.N = 0;
     }

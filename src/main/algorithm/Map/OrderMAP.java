@@ -1,13 +1,13 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Map_My
+ * FileName: MAP
  * Author:   xjl
  * Date:     2020/3/25 16:23
  * Description: map的实现
  */
 package Map;
 
-public class Map_My<Key, Value> {
+public class OrderMAP<Key extends Comparable<Key>, Value> {
     //记录首节点
     private Node head;
     //记录符号中的元素的个数
@@ -28,7 +28,7 @@ public class Map_My<Key, Value> {
         }
     }
 
-    public Map_My() {
+    public OrderMAP() {
         this.head = new Node(null, null, null);
         this.N = 0;
     }
@@ -38,22 +38,25 @@ public class Map_My<Key, Value> {
     }
 
     public void put(Key key, Value value) {
-        Node n = head;
-        //已经存在key中
-        while (n.next != null) {
-            //替换
-            n = n.next;
-            //判断首位key 如果是 那么需要替换n的节点中的
-            if (n.key == key) {
-                n.value = value;
+        Node pre = head;
+
+        Node curr = pre;
+        Node index = curr.next;
+
+        while (index != null) {
+            if (index.key == key) {
+                index.value = value;
+                return;
+            } else if (index.key.compareTo(key) > 0) {
+                Node node = new Node(key, value, null);
+                curr.next = node;
+                node.next = index;
                 return;
             }
+            index = index.next;
+            curr = curr.next;
         }
-        // 如果是存在相同的key  创建的节点的
-        Node newnode = new Node(key, value, null);
-        Node oldfrist = head.next;
-        newnode.next = oldfrist;
-        head.next = newnode;
+        curr.next = new Node(key, value, null);
         //元素+1
         N++;
     }
@@ -61,24 +64,26 @@ public class Map_My<Key, Value> {
     public void delete(Key key) {
         //找到key的值
         Node n = head;
-        while (n.next != null) {
-            if (n.key == key) {
-                //删除这个节点
-                n.next = n.next.next;
+        Node curr = n.next;
+        while (curr.next != null) {
+            if (curr.key == key) {
+                n.next = curr.next;
                 N--;
                 return;
             }
-            n = n.next;
+            n = curr;
+            curr = curr.next;
         }
     }
 
     public Value get(Key key) {
-        Node n = head;
-        while (n.next != null) {
-            if (n.key == key) {
-                return n.value;
+        Node pre = head;
+        Node curr = pre.next;
+        while (curr != null) {
+            if (curr.key == key) {
+                return curr.value;
             }
-            n = n.next;
+            curr = curr.next;
         }
         return null;
     }
