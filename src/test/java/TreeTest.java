@@ -1,13 +1,14 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Treetest
+ * FileName: TreeTest
  * Author:   xjl
  * Date:     2020/3/27 11:06
  * Description: 测试代码
  */
-package Tree;
 
-public class Treetest {
+import Tree.BinaryTree;
+
+public class TreeTest {
     public static void main(String[] args) {
         //创建一个二叉树的
         BinaryTree<Integer, String> tree = new BinaryTree<Integer, String> ();

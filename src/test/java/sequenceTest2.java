@@ -3,13 +3,13 @@ import org.junit.Test;
 
 /**
  * Copyright (C), 2018-2020
- * FileName: sequencetest
+ * FileName: sequenceTest
  * Author:   xjl
  * Date:     2020/5/7 9:01
  * Description: 线性表的测试
  */
 
-public class sequencetest2 {
+public class sequenceTest2 {
 
     @Test
     public void test() {

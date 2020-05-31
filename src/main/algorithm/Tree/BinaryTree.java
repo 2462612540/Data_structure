@@ -37,7 +37,6 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
 
     //构造函数
     public BinaryTree() {
-        this.root = new Node(null, null, null, null);
         this.N = 0;
     }
 
@@ -61,8 +60,7 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         }
         //子树不为空
         //比较节点的键值和插入的key的大小
-        int crp = key.compareTo((Key) x.key);// key的大于节点的值
-        System.out.println(crp);
+        int crp = (int) key.compareTo((Key) x.key);// key的大于节点的值
         if (crp > 0) {
             //key>x.key x表示的是节点 插入的值比节点值大 那就应该是放置在右边的这个地方
             //x.right=put(x.right,key,value) 表示的是去插入到想 x的右节点？
@@ -75,8 +73,6 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
             //如果key=x的节点的值 替换原理的值便 这里其实这是没有改变的。
             x.value = value;
         }
-        //让元素个数增加
-        N++;
         return x;
     }
 
@@ -199,8 +195,12 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
         }
     }
 
-    //二叉树的遍历的方式
-    //前序遍历
+    /**
+     * //二叉树的遍历的方式
+     *
+     * @return
+     */
+    //前序遍历 根左右的顺序
     //获取整个树的键
     public QueueLink<Key> preErgodic() {
         QueueLink<Key> keys = new QueueLink<>();
@@ -245,7 +245,7 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
             midErgodic(x.left, keys);
         }
         //将当前子树的放置
-        keys.push((Key) x.value);
+        keys.push((Key) x.key);
         //将右子树的放置
         if (x.right != null) {
             midErgodic(x.right, keys);
@@ -274,13 +274,15 @@ public class BinaryTree<Key extends Comparable<Key>, Value> {
             afterErgodic(x.right, keys);
         }
         //将当前子树的放置
-        keys.push((Key) x.value);
+        keys.push((Key) x.key);
     }
 
     //层序遍历的方法
     public QueueLink<Key> layerErgodic() {
         //定义两个队列
+        //存储值
         QueueLink<Key> keys = new QueueLink<>();
+        //存储节点的队例
         QueueLink<Node> nodes = new QueueLink<>();
         nodes.push(root);
         while (!nodes.isEmpty()) {

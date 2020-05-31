@@ -1,6 +1,6 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Maptest
+ * FileName: MapTest
  * Author:   xjl
  * Date:     2020/3/25 16:56
  * Description: map测试
@@ -9,7 +9,7 @@
 import Map.MAP;
 import Map.OrderMAP;
 
-public class Maptest {
+public class MapTest {
 
     public static void main(String[] args) {
         MAP<Integer, String> MAP = new MAP();

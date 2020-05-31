@@ -50,7 +50,6 @@ public class HEAP<T extends Comparable<T>> {
 
     //删除最大的元素
     public T delMax() {
-
         T max = items[1];
         //交换1和最大的元素
         exch(1, N);
