@@ -11,14 +11,14 @@ import java.util.Arrays;
 
 public class QuickSort {
     //对数组的元素进行排序
-    private static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a) {
         int lo = 0;
         int hi = a.length - 1;
         sort(a, lo, hi);
     }
 
     //对数组a中从索引lo到hi之间的元素进行排序
-    private static void sort(Comparable[] a, int lo, int hi) {
+    public static void sort(Comparable[] a, int lo, int hi) {
         if (hi <= lo) {
             return;
         }
@@ -31,7 +31,7 @@ public class QuickSort {
     }
 
     //对数组a中的从lo到hi之间的元素进行分组 并返回分组界限的对应的索引
-    private static int partition(Comparable[] a, int lo, int hi) {
+    public static int partition(Comparable[] a, int lo, int hi) {
         //确定分界值
         Comparable key = a[lo];
         //定义两个指针 分别指向代切分的最小的元素的索引的下一个位置
@@ -46,7 +46,7 @@ public class QuickSort {
                 }
             }
             //在从左向右边扫描 移动left 找到一个分界值大的元素 停止
-            while (less(key, a[++left])) {
+            while (less(a[++left], key)) {
                 if (left == hi) {
                     break;
                 }
@@ -63,11 +63,11 @@ public class QuickSort {
         return right;
     }
 
-    private static boolean less(Comparable v, Comparable w) {
+    public static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) < 0;
     }
 
-    private static void exch(Comparable[] a, int i, int j) {
+    public static void exch(Comparable[] a, int i, int j) {
         Comparable temp = a[i];
         a[i] = a[j];
         a[j] = temp;
