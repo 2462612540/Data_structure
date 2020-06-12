@@ -1,6 +1,6 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Selection
+ * FileName: SelectionSort
  * Author:   xjl
  * Date:     2020/5/31 21:41
  * Description: 选择排序
@@ -9,7 +9,12 @@ package Sort;
 
 import org.junit.Test;
 
-public class Selection {
+public class SelectionSort {
+    /**
+     * 选择排序
+     *
+     * @param a
+     */
     public static void sort(Comparable[] a) {
         for (int i = 0; i < a.length - 2; i++) {
             //定义一个变量 记录最小的所在的索引 默认是选择排序的第一个元素所在的位置的
@@ -24,6 +29,13 @@ public class Selection {
         }
     }
 
+    /**
+     * 比较的函数
+     *
+     * @param V
+     * @param W
+     * @return
+     */
     private static boolean geeratr(Comparable V, Comparable W) {
         return V.compareTo(W) > 0;
     }
@@ -40,7 +52,7 @@ public class Selection {
         Comparable[] a = {1, 5, 8, 6, 12, 0, 58};
         sort(a);
         for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i]+"  ");
+            System.out.print(a[i] + "  ");
         }
     }
 }

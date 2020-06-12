@@ -1,6 +1,6 @@
 /**
  * Copyright (C), 2018-2020
- * FileName: Insertsort
+ * FileName: InsertSort
  * Author:   xjl
  * Date:     2020/3/19 15:28
  * Description: c插入排序
@@ -9,7 +9,7 @@ package Sort;
 
 import org.junit.Test;
 
-public class Insertsort {
+public class InsertSort {
     public static int[] Insertsort(int[] number) {
         for (int i = 1; i < number.length; i++) {
             for (int j = i; j >0; j--) {
