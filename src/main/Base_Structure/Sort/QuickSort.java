@@ -12,14 +12,14 @@ import java.util.Scanner;
 
 public class QuickSort {
     //对数组的元素进行排序
-    public static void sort(Comparable[] a) {
+    public static void sort(int[] a) {
         int lo = 0;
         int hi = a.length - 1;
         sort(a, lo, hi);
     }
 
     //对数组a中从索引lo到hi之间的元素进行排序
-    public static void sort(Comparable[] a, int lo, int hi) {
+    public static void sort(int[] a, int lo, int hi) {
         if (hi <= lo) {
             return;
         }
@@ -32,9 +32,9 @@ public class QuickSort {
     }
 
     //对数组a中的从lo到hi之间的元素进行分组 并返回分组界限的对应的索引
-    public static int partition(Comparable[] a, int lo, int hi) {
+    public static int partition(int[] a, int lo, int hi) {
         //确定分界值
-        Comparable key = a[lo];
+        int key = a[lo];
         //定义两个指针 分别指向代切分的最小的元素的索引的下一个位置
         int left = lo;
         int right = hi + 1;
@@ -56,24 +56,25 @@ public class QuickSort {
             if (left >= right) {
                 break;
             } else {
-                exch(a, left, right);
+                exchange(a, left, right);
             }
         }
         //把分割的点和第一元素进行交换
-        exch(a, lo, right);
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-        System.out.println();
+        exchange(a, lo, right);
+        //返回的是中间的位置
         return right;
     }
 
-    public static boolean less(Comparable v, Comparable w) {
-        return v.compareTo(w) < 0;
+    public static boolean less(int v, int w) {
+        if (v - w < 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public static void exch(Comparable[] a, int i, int j) {
-        Comparable temp = a[i];
+    public static void exchange(int[] a, int i, int j) {
+        int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
     }
@@ -82,7 +83,7 @@ public class QuickSort {
         //数据的输入
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
-        Comparable[] array = new Comparable[m];
+        int[] array = new int[m];
         for (int i = 0; i < m; i++) {
             array[i] = sc.nextInt();
         }

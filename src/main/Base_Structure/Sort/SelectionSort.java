@@ -15,12 +15,12 @@ public class SelectionSort {
      *
      * @param a
      */
-    public static void sort(Comparable[] a) {
+    public static void sort(int[] a) {
         for (int i = 0; i < a.length - 2; i++) {
             //定义一个变量 记录最小的所在的索引 默认是选择排序的第一个元素所在的位置的
             int minindex = i;
             for (int j = i + 1; j < a.length; j++) {
-                if (geeratr(a[minindex], a[j])) {
+                if (compare(a[minindex], a[j])) {
                     minindex = j;
                 }
             }
@@ -29,19 +29,15 @@ public class SelectionSort {
         }
     }
 
-    /**
-     * 比较的函数
-     *
-     * @param V
-     * @param W
-     * @return
-     */
-    private static boolean geeratr(Comparable V, Comparable W) {
-        return V.compareTo(W) > 0;
+    private static boolean compare(int V, int W) {
+        if (V - W < 0) {
+            return true;
+        }
+        return false;
     }
 
-    private static void exch(Comparable[] a, int i, int j) {
-        Comparable temp;
+    private static void exch(int[] a, int i, int j) {
+        int temp;
         temp = a[i];
         a[i] = a[j];
         a[j] = temp;
@@ -49,7 +45,7 @@ public class SelectionSort {
 
     @Test
     public void test() {
-        Comparable[] a = {1, 5, 8, 6, 12, 0, 58};
+        int[] a = {1, 5, 8, 6, 12, 0, 58};
         sort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + "  ");

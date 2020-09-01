@@ -66,7 +66,7 @@ class Singleton {
 }
 
 /**
- * 懒汉式的synchronize
+ * 懒汉式的synchronize 锁的力度太大
  */
 class Singleton0 {
     private static Singleton0 Instance;
