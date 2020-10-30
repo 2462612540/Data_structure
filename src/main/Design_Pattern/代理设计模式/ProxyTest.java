@@ -5,7 +5,7 @@
  * Date:     2020/9/19 13:41
  * Description:
  */
-package ProxyFactory;
+package 代理设计模式;
 
 /**
  * 核心业务的主题

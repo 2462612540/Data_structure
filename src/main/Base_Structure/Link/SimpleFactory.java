@@ -9,7 +9,7 @@ package Link;
 
 import org.junit.Test;
 
-public class Client {
+public class SimpleFactory {
 
     public class ListNode {
         //节点的成员变量必须是要为public
