@@ -5,7 +5,7 @@
  * Date:     2020/11/11 16:39
  * Description:
  */
-package 适配器模式.bean;
+package 适配器设计模式.bean;
 
 public class LogBean {
     /**

@@ -5,7 +5,7 @@
  * Date:     2020/11/11 16:10
  * Description:
  */
-package 适配器模式;
+package 适配器设计模式;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -5,11 +5,11 @@
  * Date:     2020/11/11 19:18
  * Description:
  */
-package 适配器模式.adapter;
+package 适配器设计模式.adapter;
 
-import 适配器模式.DB.LogWriteDbService;
-import 适配器模式.bean.LogBean;
-import 适配器模式.file.LogWriteFileServiceImpl;
+import 适配器设计模式.DB.LogWriteDbService;
+import 适配器设计模式.bean.LogBean;
+import 适配器设计模式.file.LogWriteFileServiceImpl;
 
 public class LogAdapter implements LogWriteDbService {
 

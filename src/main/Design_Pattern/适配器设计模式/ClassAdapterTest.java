@@ -5,7 +5,7 @@
  * Date:     2020/11/11 16:01
  * Description:
  */
-package 适配器模式;
+package 适配器设计模式;
 
 //目标接口
 interface Target {

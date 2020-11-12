@@ -5,9 +5,9 @@
  * Date:     2020/11/11 16:50
  * Description:
  */
-package 适配器模式.DB;
+package 适配器设计模式.DB;
 
-import 适配器模式.bean.LogBean;
+import 适配器设计模式.bean.LogBean;
 
 public interface LogWriteDbService {
     /**

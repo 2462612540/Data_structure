@@ -1,6 +1,6 @@
-package 适配器模式.file;
+package 适配器设计模式.file;
 
-import 适配器模式.bean.LogBean;
+import 适配器设计模式.bean.LogBean;
 
 import java.util.List;
 
