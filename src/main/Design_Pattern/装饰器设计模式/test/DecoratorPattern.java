@@ -5,7 +5,7 @@
  * Date:     2020/11/12 9:15
  * Description:
  */
-package 装饰器设计模式;
+package 装饰器设计模式.test;
 
 //抽象构件角色
 interface Component {
